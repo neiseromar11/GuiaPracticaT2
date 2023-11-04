@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuiaPracticaT2.biblioteca
+namespace Biblioteca_Clase
 {
-    internal class calculos
+    public class calculos
     {
+        // funcion Obtener Categoria
         public static string ObtenerCategoria()
         {
             string categoria;
@@ -17,6 +18,7 @@ namespace GuiaPracticaT2.biblioteca
             } while (categoria != "A" && categoria != "B" && categoria != "C" && categoria != "D");
             return categoria;
         }
+        //funcion Obetener Horas Trabajadas
         public static int ObtenerHorasTrabajadas()
         {
             int horasTrabajadas;
@@ -26,6 +28,7 @@ namespace GuiaPracticaT2.biblioteca
             } while (!int.TryParse(Console.ReadLine(), out horasTrabajadas));
             return horasTrabajadas;
         }
+        //Funcion Calcular SueldO Bruto
         public static float CalcularSueldoBruto(string categoria, int horasTrabajadas)
         {
             float tarifa = 0f;
@@ -46,14 +49,18 @@ namespace GuiaPracticaT2.biblioteca
             }
             return tarifa * horasTrabajadas;
         }
+        //Funcion calcular Descuento
         public static float CalcularDescuento(float sueldoBruto)
         {
             return (float)(sueldoBruto <= 2500 ? sueldoBruto * 0.15 : sueldoBruto * 0.20);
         }
+        //funcion calcular sueldo neto
         public static float CalcularSueldoNeto(float sueldoBruto, float descuento)
         {
             return sueldoBruto - descuento;
         }
+
+        //funcion pie de pagina
           public static void PieDePagina(int cantidad, float sumaSuBr, float sumaDscto, float sumaSuNet, string[] categoria, float[] sueldoBruto, int[] horasTrabajadas, float[] tarifa, float[] descuento, float[] sueldoNeto)
         {
             Console.WriteLine("\nTrabajadores: \t" + cantidad);
@@ -70,6 +77,7 @@ namespace GuiaPracticaT2.biblioteca
             Console.WriteLine("Total Sueldos Netos: " + "{0, 18}", sumaSuNet.ToString("C"));
             Console.ReadLine();
         }
+        //funcion cabecera de pagina
         public static void CabeceraDePagina(out int cantidad, out float sumaSuBr, out float sumaDscto, out float sumaSuNet, out string[] categoria, out float[] sueldoBruto, out int[] horasTrabajadas, out float[] tarifa, out float[] descuento, out float[] sueldoNeto)
         {
             sumaSuBr = 0;

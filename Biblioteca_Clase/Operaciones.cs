@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuiaPracticaT2.biblioteca
+namespace Biblioteca_Clase
 {
-    internal class Operaciones
+    public class Operaciones
     {
+        //Funcion getEntero funcion que recibe todo INT
         public static int getEntero(string prefijo, string reemplazo)
         {
 
@@ -32,7 +33,7 @@ namespace GuiaPracticaT2.biblioteca
             return respuesta;
 
         }
-
+        //funcion getDecimal recibe float
         public static float getDecimal(string prefijo)
         {
             float respuesta = 0;
@@ -52,6 +53,7 @@ namespace GuiaPracticaT2.biblioteca
             return respuesta;
         }
 
+        //funcion getTextoPantalla recibe string 
         public static string getTextoPantalla(string prefijo)
         {
             Console.Write(prefijo);
